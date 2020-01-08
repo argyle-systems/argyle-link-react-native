@@ -45,20 +45,15 @@ export default class App extends Component<{}> {
     }
 
     async componentDidMount() {
-        // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwNzYxODI3LCJqdGkiOiI2NTA5ZDA5MDZkYjQ0OTcxOGU3OTc5MDMyZjdjYWNlYyIsInVzZXJfaWQiOiJjNGY3NWQ3Mi03MmZjLTQwOWQtOTQ3ZS04ZmVkNjc2YzBmMjUiLCJjbGllbnRfaWQiOiI0ODA3MTZkYy05ZDc3LTQ0OTEtYjVhNC0xODc5MzkxYjhmNjUiLCJpc19kZXZfb25seSI6dHJ1ZX0.10ixD_rZ2TYF4xlIxGyLb3fupbkXn7gBnBdyI-hwxCE"
         let token = ""
-        // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAyMTczNTIyLCJqdGkiOiJiOWUyMDVlYmY5ZTY0YzZiYTM2ZjkzMzFlODUwNTA0MyIsInVzZXJfaWQiOiI2Yzk1ZTBjNC0zMjRmLTQ3NmEtOTU5OC03MmJkOGFiNjFhMDAiLCJjbGllbnRfaWQiOiIxYzQ5NWJlMy01MjI5LTRhMjktOWFiNy1jMzBiMTYyMjc5MTMiLCJpc19kZXZfb25seSI6dHJ1ZX0.BCZh4c0j7QKaGUDBhkNo0kUZzGSrTYrxWXsGjp_jq8c"
         const value = await getData()
         console.log("VALUE ", value)
         if (value !== null) {
             token = value
         }
-        // ArgyleSdk.loginWith("646dc138-5942-4eb6-a9ca-dd01b6d57ae9", "https://api-sandbox.develop.argyle.io", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4MTA5MTcxLCJqdGkiOiIzMWI5YmIwOTMwMzQ0ZjY0YWExMGQ4MzgzOGEyMTkxZiIsInVzZXJfaWQiOiJhNTc0M2NmNC1jNDAwLTQyM2MtOTE5ZC1hMzFkMWM0MjBlNDIiLCJjbGllbnRfaWQiOiI0ODA3MTZkYy05ZDc3LTQ0OTEtYjVhNC0xODc5MzkxYjhmNjUiLCJpc19kZXZfb25seSI6dHJ1ZX0.s3xCG0smq1LCrZBABfB-OfKqfbNePOei1wn58Dxrqj0fsafas")
-        // ArgyleSdk.loginWith("6d77b75b-116f-466c-b5fe-08094bb419d3", "https://api-sandbox.develop.argyle.io", token)
-        ArgyleSdk.loginWith("6d77b75b-116f-466c-b5fe-08094bb419d3", "https://api-sandbox.argyle.io", token)
-        // ArgyleSdk.loginWith("a8f4b50d-7ae4-43c2-8d5b-bdcf1b0896c9", "https://api.argyle.io", token)
+        ArgyleSdk.loginWith("YOUR_PLUGIN_KEY", "https://api-sandbox.argyle.io", token)
 
-        // sample response: 
+        // sample response:
         // {
         //  token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4MTA5MTcxLCJqdGkiOiIzMWI5YmIwOTMwMzQ0ZjY0YWExMGQ4MzgzOGEyMTkxZiIsInVzZXJfaWQiOiJhNTc0M2NmNC1jNDAwLTQyM2MtOTE5ZC1hMzFkMWM0MjBlNDIiLCJjbGllbnRfaWQiOiI0ODA3MTZkYy05ZDc3LTQ0OTEtYjVhNC0xODc5MzkxYjhmNjUiLCJpc19kZXZfb25seSI6dHJ1ZX0.s3xCG0smq1LCrZBABfB-OfKqfbNePOei1wn58Dxrqj0",
         //  userId: "a5743cf4-c400-423c-919d-a31d1c420e42"
@@ -76,7 +71,7 @@ export default class App extends Component<{}> {
             if (error === ArgyleSdk.errorCodes.EXPIRED_TOKEN) {
                 setTimeout(() => {
                     // Simulated timeout before updating the token
-                    ArgyleSdk.updateToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4MTA5OTE2LCJqdGkiOiJkZDI5ZDJjYWUxMjQ0OTlhYjY1NzlhOWEwMmQzZTMzNSIsInVzZXJfaWQiOiJlNjQwMzE5Zi1mYWJjLTRjMWYtYjIyMS0yZGFmNWFkMWY0NjEiLCJjbGllbnRfaWQiOiI0ODA3MTZkYy05ZDc3LTQ0OTEtYjVhNC0xODc5MzkxYjhmNjUiLCJpc19kZXZfb25seSI6dHJ1ZX0.BxE92-Iu67KM0CF9OihsCJjnxdagzCixZVvMmy8KWvQ")
+                    ArgyleSdk.updateToken("YOUR_NEW_TOKEN")
                 }, 300)
             }
         })
