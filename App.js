@@ -47,24 +47,20 @@ export default class App extends Component<{}> {
     async componentDidMount() {
         let token = ""
         const value = await getData()
+
         console.log("VALUE ", value)
+
         if (value !== null) {
             token = value
         }
-        ArgyleSdk.loginWith("YOUR_PLUGIN_KEY", "https://api-sandbox.argyle.io", token)
 
-        // sample response:
-        // {
-        //  token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4MTA5MTcxLCJqdGkiOiIzMWI5YmIwOTMwMzQ0ZjY0YWExMGQ4MzgzOGEyMTkxZiIsInVzZXJfaWQiOiJhNTc0M2NmNC1jNDAwLTQyM2MtOTE5ZC1hMzFkMWM0MjBlNDIiLCJjbGllbnRfaWQiOiI0ODA3MTZkYy05ZDc3LTQ0OTEtYjVhNC0xODc5MzkxYjhmNjUiLCJpc19kZXZfb25seSI6dHJ1ZX0.s3xCG0smq1LCrZBABfB-OfKqfbNePOei1wn58Dxrqj0",
-        //  userId: "a5743cf4-c400-423c-919d-a31d1c420e42"
-        // }
+        ArgyleSdk.loginWith("YOUR_PLUGIN_KEY", "https://api-sandbox.argyle.io", token)
         ArgyleSdk.onUserCreated(res => {
             console.log("onUserCreated", res)
             storeData(res.token)
         })
 
         ArgyleSdk.onAccountConnected(res => console.log("onAccountConnected", res))
-
         ArgyleSdk.onAccountRemoved(res => console.log("onAccountRemoved", res))
         ArgyleSdk.onError(error => {
             console.log("onError", error)
@@ -78,6 +74,7 @@ export default class App extends Component<{}> {
         ArgyleSdk.onTokenExpired(res => console.log("onTokenExpired", res))
 
         // ArgyleSdk.dataPartners(["uber", "postmates"])
+        ArgyleSdk.companyName("My Company")
         // ArgyleSdk.dataPartners(null)
     }
 
