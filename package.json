@@ -7,15 +7,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "@argyleio/argyle-plugin-react-native": "^1.3.0",
-    "@react-native-community/async-storage": "react-native-community/react-native-async-storage",
+    "@argyleio/argyle-plugin-react-native": "^1.3.2",
+    "@react-native-community/async-storage": "github:react-native-community/react-native-async-storage",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-swift": "^1.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
-    "@babel/runtime": "^7.5.0",
+    "@babel/core": "^7.8.7",
+    "@babel/runtime": "^7.8.7",
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
