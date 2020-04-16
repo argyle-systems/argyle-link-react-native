@@ -48,6 +48,7 @@
 		00E356EE1AD99517003FC87E /* testerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* testerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testerTests.m; sourceTree = "<group>"; };
+		080A62572437F2EE0005B647 /* libargyle-plugin-react-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libargyle-plugin-react-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1041DE0575A948FD80E422B7 /* RNPlaceholder.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = RNPlaceholder.swift; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Argyle demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Argyle demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = tester/AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				080A62572437F2EE0005B647 /* libargyle-plugin-react-native.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				DE7D4CEE060A0D062EFCDE54 /* libPods-tester.a */,

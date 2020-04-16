@@ -72,10 +72,10 @@ export default class App extends Component<{}> {
             }
         })
         ArgyleSdk.onTokenExpired(res => console.log("onTokenExpired", res))
+        ArgyleSdk.onClose(() => console.log("onClose"))
 
         // ArgyleSdk.dataPartners(["uber", "postmates"])
         ArgyleSdk.companyName("My Company")
-        // ArgyleSdk.dataPartners(null)
     }
 
     startNew = () => {
