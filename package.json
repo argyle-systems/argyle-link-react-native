@@ -13,11 +13,11 @@
     "@react-native-community/async-storage": "github:react-native-community/react-native-async-storage",
     "react": "16.9.0",
     "react-native": "0.61.0",
-    "react-native-swift": "^1.2.2"
+    "react-native-swift": "^1.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.9.0",
     "eslint": "^6.4.0",

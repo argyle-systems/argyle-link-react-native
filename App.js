@@ -60,7 +60,9 @@ export default class App extends Component<{}> {
             storeData(res.token)
         })
 
+        ArgyleSdk.onAccountCreated(res => console.log("onAccountCreated", res))
         ArgyleSdk.onAccountConnected(res => console.log("onAccountConnected", res))
+        ArgyleSdk.onAccountUpdated(res => console.log("onAccountUpdated", res))
         ArgyleSdk.onAccountRemoved(res => console.log("onAccountRemoved", res))
         ArgyleSdk.onError(error => {
             console.log("onError", error)
