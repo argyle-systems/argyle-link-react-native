@@ -1,7 +1,8 @@
 PODS:
-  - Argyle (1.4.4)
-  - argyle-plugin-react-native (1.4.2):
-    - Argyle (~> 1.4)
+  - Argyle (1.4.6):
+    - Mixpanel-swift
+  - argyle-plugin-react-native (1.4.5-beta.0):
+    - Argyle (= 1.4.6)
     - React
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
@@ -23,6 +24,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - Mixpanel-swift (2.7.3):
+    - Mixpanel-swift/Complete (= 2.7.3)
+  - Mixpanel-swift/Complete (2.7.3)
   - RCTRequired (0.61.0)
   - RCTTypeSafety (0.61.0):
     - FBLazyVector (= 0.61.0)
@@ -261,6 +265,7 @@ SPEC REPOS:
   trunk:
     - Argyle
     - boost-for-react-native
+    - Mixpanel-swift
 
 EXTERNAL SOURCES:
   argyle-plugin-react-native:
@@ -319,14 +324,15 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: 902b7b03127b1cdebc3d236d42a111027c0456eb
-  argyle-plugin-react-native: 1e5099ba6bbc8d4f692f1e71969138a0eea8204d
+  Argyle: e4e40f29fc3233e124c3735828217dbdda11fa46
+  argyle-plugin-react-native: befea1ce9e4b8835101f5455b52760f61d010f8c
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 815d415da87ffb4308b229ffe4b531799d118c6c
   FBReactNativeSpec: a43dfecd1f9e31d5729a38adafba1790c4c6c950
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  Mixpanel-swift: 0624c84b0746e3434d5a286ca590bd5769625d28
   RCTRequired: 1f0d5c0baf372e291f70b6b1275b19142bdce931
   RCTTypeSafety: 3b7329bbb97065c1f6ff7157f8eaf0da60fdc13d
   React: e419a1c0c3afe96300511585756bbea2f9f35e04
@@ -349,6 +355,6 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: b16697280b08bab4b5f2f67f752d93d13a52e9ed
   Yoga: 3f70bbd9aa01e04eefec36e2a085b2fc0ff1dd98
 
-PODFILE CHECKSUM: b553c411264b9535b33a83ee0047aad41b6c1a7c
+PODFILE CHECKSUM: 3a8afe712872dbf51cf0ace4c7cfaf20a9aba9a8
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.2
