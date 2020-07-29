@@ -77,7 +77,6 @@ export default class App extends Component<{}> {
         ArgyleSdk.onClose(() => console.log("onClose"))
 
         // ArgyleSdk.dataPartners(["uber", "postmates"])
-        ArgyleSdk.companyName("My Company")
     }
 
     startNew = () => {
