@@ -64,6 +64,7 @@ export default class App extends Component<{}> {
         ArgyleSdk.onAccountConnected(res => console.log("onAccountConnected", res))
         ArgyleSdk.onAccountUpdated(res => console.log("onAccountUpdated", res))
         ArgyleSdk.onAccountRemoved(res => console.log("onAccountRemoved", res))
+        ArgyleSdk.onAccountError(res => console.log("onAccountError", res))
         ArgyleSdk.onError(error => {
             console.log("onError", error)
             if (error === ArgyleSdk.errorCodes.EXPIRED_TOKEN) {
