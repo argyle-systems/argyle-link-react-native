@@ -1,6 +1,6 @@
 PODS:
   - Argyle (1.5.4)
-  - argyle-plugin-react-native (1.5.2):
+  - argyle-plugin-react-native (1.5.3):
     - Argyle (= 1.5.4)
     - React
   - boost-for-react-native (1.63.0)
@@ -433,7 +433,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Argyle: f42c5ef5c191a66868f660509ccbae40775f836d
-  argyle-plugin-react-native: 49a07b780f3ee774950ee61675984d950ac854b2
+  argyle-plugin-react-native: 8a953247ebb7f1f6a1cdcaf1726f3657af883ffc
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
