@@ -85,7 +85,7 @@ This is a changelog of features up to version 1.5.17. For more recent releases c
 - Various UI fixes
 - Removed permissions param
 
-1.5.0
+**1.5.0**
 
 - new flow that splits companies and platforms
 - clicking disabled items in the list now navigates to a Disabled screen
