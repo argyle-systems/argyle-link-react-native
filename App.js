@@ -39,7 +39,7 @@ export default class App extends Component<{}> {
       token = value
     }
 
-    ArgyleSdk.loginWith('YOUR_PLUGIN_KEY', 'https://api-sandbox.argyle.io', token)
+    ArgyleSdk.loginWith('YOUR_PLUGIN_KEY', 'https://api-sandbox.argyle.io/v1', token)
     ArgyleSdk.onUserCreated(res => {
       console.log('onUserCreated', res)
       storeData(res.token)
