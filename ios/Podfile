@@ -6,8 +6,11 @@ platform :ios, '11.0'
 target 'tester' do
   config = use_native_modules!
 
-  use_react_native!(:path => config["reactNativePath"])
-  #pod 'Argyle', :build_type => :dynamic_framework
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
 
   target 'testerTests' do
     inherit! :complete
