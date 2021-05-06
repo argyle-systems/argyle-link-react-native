@@ -50,6 +50,9 @@ export default class App extends Component<{}> {
     ArgyleSdk.onAccountUpdated(res => console.log('onAccountUpdated', res))
     ArgyleSdk.onAccountRemoved(res => console.log('onAccountRemoved', res))
     ArgyleSdk.onAccountError(res => console.log('onAccountError', res))
+    ArgyleSdk.onPayDistributionSuccess(res => console.log('onPayDistributionSuccess', res))
+    ArgyleSdk.onPayDistributionError(res => console.log('onPayDistributionError', res))
+    ArgyleSdk.onAccountError(res => console.log('onAccountError', res))
     ArgyleSdk.onError(error => {
       console.log('onError', error)
       if (error === ArgyleSdk.errorCodes.EXPIRED_TOKEN) {
@@ -62,7 +65,7 @@ export default class App extends Component<{}> {
     ArgyleSdk.onTokenExpired(res => console.log('onTokenExpired', res))
     ArgyleSdk.onClose(() => console.log('onClose'))
 
-    // ArgyleSdk.dataPartners(["uber", "postmates"])
+    // ArgyleSdk.linkItems(["uber"])
   }
 
   startNew = () => {
