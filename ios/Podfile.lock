@@ -1,6 +1,6 @@
 PODS:
   - Argyle (3.0.0)
-  - argyle-plugin-react-native (3.0.0):
+  - argyle-plugin-react-native (3.0.3):
     - Argyle (= 3.0.0)
     - React
   - boost-for-react-native (1.63.0)
@@ -378,7 +378,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Argyle: 9ce457fa658731510965b5e529608919c5dc45b9
-  argyle-plugin-react-native: 49ef4a23020e6c01dce58a97d1c8e071a4a867e1
+  argyle-plugin-react-native: 156540ab61bcdaf7cf0135bfe6b76cc985dbfec8
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: 7b423f9e248eae65987838148c36eec1dbfe0b53
