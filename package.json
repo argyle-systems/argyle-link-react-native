@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@argyleio/argyle-plugin-react-native": "^3.1.1",
+    "@argyleio/argyle-plugin-react-native": "3.1.2",
     "@react-native-community/async-storage": "latest",
     "react": "17.0.1",
     "react-native": "^0.64.1",
