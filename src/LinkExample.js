@@ -74,6 +74,7 @@ export const LinkExample = () => {
         }, 300)
       })
       ArgyleSdk.onClose(() => console.log('onClose'))
+      ArgyleSdk.onUIEvent(res => console.log('onUIEvent', JSON.stringify(res, null, 2)))
     }
 
     setup()
