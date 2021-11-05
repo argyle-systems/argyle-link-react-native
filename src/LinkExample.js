@@ -41,6 +41,7 @@ export const LinkExample = () => {
       // This way you won't need to handle it within onTokenExpired callback
       // https://argyle.com/docs/argyle-link/user-tokens
       ArgyleSdk.loginWith(LINK_KEY, API_HOST, userToken)
+      // ArgyleSdk.customizationId('YOUR_CUSTOMIZATION_ID')
 
       // Tip: use this to define a subset of link items to use
       // ArgyleSdk.linkItems(["uber"])
@@ -63,7 +64,6 @@ export const LinkExample = () => {
       ArgyleSdk.onAccountConnected(res => console.log('onAccountConnected', res))
       ArgyleSdk.onAccountUpdated(res => console.log('onAccountUpdated', res))
       ArgyleSdk.onAccountRemoved(res => console.log('onAccountRemoved', res))
-      ArgyleSdk.onAccountError(res => console.log('onAccountError', res))
       ArgyleSdk.onAccountError(res => console.log('onAccountError', res))
       ArgyleSdk.onError(error => console.log('onError', error))
       ArgyleSdk.onTokenExpired(res => {
