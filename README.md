@@ -2,7 +2,7 @@
 
 Argyle Link React Native SDK provides a way to integrate [Argyle Link](https://argyle.io/docs/argyle-link) into your React Native app.
 
-If you are looking to update Argyle Link to the newest version, navigate to [upgrade guide](https://github.com/argyle-systems/argyle-link-react-native/blob/master/Migration.md).
+If you are looking to update Argyle Link to the newest version, navigate to [upgrade guide](https://github.com/argyle-systems/argyle-link-react-native/blob/master/UPGRADING.md).
 
 **Requirements for iOS:**
 

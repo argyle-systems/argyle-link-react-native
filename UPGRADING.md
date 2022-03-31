@@ -1,4 +1,4 @@
-# Migrating to Link 4
+# React Native SDK version upgrade guide
 ## Learn how to upgrade to the newest Link version.
 If you are looking to integrate Argyle Link for the first time navigate to [integration guide](https://github.com/argyle-systems/argyle-link-react-native#readme).
 
@@ -26,6 +26,10 @@ We strongly recommend upgrading the SDK as soon as there is a new version availa
 5. Make any necessary changes as a result of the upgrade.
 
 ---
+# Migrating to Link 4
+
+f you're using a previous version of Link and would like to migrate to the new version, please update the changed configuration parameters and then follow the usual [React Native Link SDK version upgrade instruction](#upgrade-to-a-new-sdk-version) defined above.
+
 ## Migrating from Link 3
 ### Updated configuration attribute
 
