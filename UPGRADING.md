@@ -28,7 +28,33 @@ We strongly recommend upgrading the SDK as soon as there is a new version availa
 ---
 # Migrating to Link 4
 
-There are no configuration parameters changed if you are using the previous version of Link (Link 3). The usual [React Native Link SDK version upgrade instruction](#upgrade-to-a-new-sdk-version) should be followed to upgrade to the newest version.
+If you're using a previous version of Link and would like to migrate to the new version, please review updates described below, make necessary changes and then follow the usual [React Native Link SDK version upgrade instruction](#upgrade-to-a-new-sdk-version) defined above.
+
+---
+### Updated configuration attributes
+
+Please find below a list of all configuration attributes that have been removed or changed.
+
+---
+
+**introSearchPlaceholder: removed**
+
+Became redundant as search is no longer available in the [Intro screen](https://argyle.com/docs/products/link-4#intro-screen).
+
+---
+**searchScreenTitle: removed**
+
+No longer applicable due to [Search screen](https://argyle.com/docs/products/link-4#search-screen) changes.
+
+---
+**searchScreenSubtitle: removed**
+
+No longer applicable due to [Search screen](https://argyle.com/docs/products/link-4#search-screen) changes.
+
+---
+**dataPartners: removed**
+
+The property has been deprecated since introduction of Link 3 in favor of `linkItems`.
 
 ---
 
