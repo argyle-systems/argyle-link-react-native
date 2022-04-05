@@ -21,7 +21,7 @@ configurations.all {
 }
 ```
 
-### 1. Adding the SDK dependency
+## 1. Add the SDK dependency
 
 `$ npm install @argyleio/argyle-plugin-react-native --save` or
 
@@ -37,33 +37,15 @@ Update the Argyle pod with:
 
 in case not the most recent version of Argyle pod was installed.
 
-### 2. Configuring and starting the flow
+--- 
+## 2. Configure and integrate Link
+### 1. Access your Link API Key
+1. Log into your [Console](https://console.argyle.com/api-keys) instance
+2. Navigate to the [API Keys](https://console.argyle.com/api-keys) area under the Developer menu
+3. Copy your Sandbox or Production Link API Key for use in the next step
 
-```
-import ArgyleSdk from '@argyleio/argyle-plugin-react-native'
+### 2. Utilize user tokens
+For successful implementation you need to make sure to utilize user tokens correctly. Learn how to do it in Argyle [returning user experience guide](https://argyle.com/docs/products/returning-users-experience#suggested-flow-for-user-token-usage) before continuing onto the next step.
 
-// Configure the SDK before hand, once. only call ArgyleSdk.start() when the UI is needed
-ArgyleSdk.loginWith("YOUR_LINK_KEY", "https://api-sandbox.argyle.com/v1", "")
-
-ArgyleSdk.onUserCreated(res => console.log("onUserCreated", res))
-ArgyleSdk.onAccountCreated(res => console.log("onAccountCreated", res))
-ArgyleSdk.onAccountConnected(res => console.log("onAccountConnected", res))
-ArgyleSdk.onAccountUpdated(res => console.log("onAccountUpdated", res))
-ArgyleSdk.onAccountRemoved(res => console.log("onAccountRemoved", res))
-ArgyleSdk.onAccountError(res => console.log('onAccountError', res))
-ArgyleSdk.onPayDistributionSuccess(res => console.log('onPayDistributionSuccess', res))
-ArgyleSdk.onPayDistributionError(res => console.log('onPayDistributionError', res))
-ArgyleSdk.onError(error => console.log("onError", error))
-ArgyleSdk.onTokenExpired(res => console.log("onTokenExpired", res))
-ArgyleSdk.onClose(() => console.log('onClose'))
-ArgyleSdk.onUIEvent(res => console.log('onUIEvent', JSON.stringify(res, null, 2)))
-
-ArgyleSdk.linkItems(["uber", "lyft"]) // Can be skipped if all Link items are needed
-
-// Launch the SDK
-ArgyleSdk.start()
-```
-
-#### Closing Link programmatically
-
-Normally, Link is closed by the user but it can also be closed by calling `ArgyleSdk.close()`
+### 3. Integrate Link
+See [LinkExample](https://github.com/argyle-systems/argyle-link-react-native/blob/master/src/LinkExample.js) for sample implementation.
