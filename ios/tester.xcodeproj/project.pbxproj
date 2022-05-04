@@ -224,8 +224,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				26A1EEE7967B3E049C705488 /* [CP] Embed Pods Frameworks */,
 				110492791DA40D4C13DB50F9 /* [CP] Copy Pods Resources */,
+				DCFEC714C429C1C0673F8288 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,8 +247,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				A169480D87A4F501E7B2C633 /* [CP] Embed Pods Frameworks */,
 				860382DAA3782D8F6551D6CE /* [CP] Copy Pods Resources */,
+				FDFF0B805DCF6AEF8BE50259 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -415,24 +415,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		26A1EEE7967B3E049C705488 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ArgyleLink/ArgyleLink.framework/ArgyleLink",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArgyleLink.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2736D5B08BCFD45C61D3B732 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,14 +491,14 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A169480D87A4F501E7B2C633 /* [CP] Embed Pods Frameworks */ = {
+		DCFEC714C429C1C0673F8288 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ArgyleLink/ArgyleLink.framework/ArgyleLink",
+				"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/ArgyleLink.framework/ArgyleLink",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -524,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4C7FF2783CBA67282C71C31 /* [CP] Check Pods Manifest.lock */ = {
@@ -607,6 +589,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDFF0B805DCF6AEF8BE50259 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/ArgyleLink.framework/ArgyleLink",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArgyleLink.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -917,7 +917,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -972,7 +972,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
