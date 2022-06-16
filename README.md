@@ -1,4 +1,4 @@
-# Argyle Link for React Native
+# Argyle React Native SDK
 
 Argyle Link React Native SDK provides a way to integrate [Argyle Link](https://argyle.io/docs/argyle-link) into your React Native app.
 
@@ -22,6 +22,8 @@ configurations.all {
 ```
 
 ## 1. Add the SDK dependency
+
+[![npm](https://img.shields.io/npm/v/@argyleio/argyle-plugin-react-native?style=for-the-badge)](https://www.npmjs.com/package/@argyleio/argyle-plugin-react-native)
 
 `$ npm install @argyleio/argyle-plugin-react-native --save` or
 
