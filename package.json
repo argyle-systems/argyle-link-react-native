@@ -9,10 +9,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "@argyleio/argyle-plugin-react-native": "4.2.3",
+    "@argyleio/argyle-plugin-react-native": "4.2.4",
     "@react-native-community/async-storage": "latest",
     "react": "17.0.2",
-    "react-native": "^0.66.4",
+    "react-native": "0.68.2",
     "react-native-swift": "^1.2.3"
   },
   "devDependencies": {
@@ -20,9 +20,9 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
-    "eslint": "7.14.0",
+    "eslint": "^7.32.0",
     "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.66.2",
+    "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.1"
   },
   "jest": {
