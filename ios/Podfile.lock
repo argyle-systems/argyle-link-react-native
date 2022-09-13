@@ -1,7 +1,7 @@
 PODS:
-  - Argyle (4.4.0)
-  - argyle-plugin-react-native (4.4.0):
-    - Argyle (= 4.4.0)
+  - Argyle (4.6.0)
+  - argyle-plugin-react-native (4.6.1):
+    - Argyle (= 4.6.0)
     - React
   - boost (1.76.0)
   - DoubleConversion (1.1.6)
@@ -402,8 +402,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: 2520781fc12a730fe1cb6d08181134624b67d116
-  argyle-plugin-react-native: 8ab919b0ca5f88e77511064976106f83b2565868
+  Argyle: 3ab72b06a0c844e8b84dcd015296795c107b5f1c
+  argyle-plugin-react-native: 6d6299cc340ae54a64720de5ab93d4ff259d2d90
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
   FBLazyVector: a7a655862f6b09625d11c772296b01cd5164b648
@@ -440,4 +440,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 456509228f28a8dccc01e64534b1dbbf848f833e
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.10.1
