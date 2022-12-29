@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import ArgyleSdk from '@argyleio/argyle-plugin-react-native'
 
-const API_HOST = 'https://api-sandbox.argyle.io/v1'
+const API_HOST = 'https://api-sandbox.argyle.com/v1'
 const LINK_KEY = 'YOUR_LINK_KEY' // get your key here: https://console.argyle.com/api-keys
 
 const TOKEN_STORAGE_KEY = 'userKey'
