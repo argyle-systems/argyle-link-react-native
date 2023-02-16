@@ -502,12 +502,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-tester-testerTests/Pods-tester-testerTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/ArgyleLink.framework/ArgyleLink",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/Argyle.framework/Argyle",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/hermes.framework/hermes",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArgyleLink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argyle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,12 +604,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-tester/Pods-tester-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/ArgyleLink.framework/ArgyleLink",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Argyle/Argyle.framework/Argyle",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/hermes.framework/hermes",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArgyleLink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argyle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
