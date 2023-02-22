@@ -1,4 +1,7 @@
 [![npm](https://img.shields.io/npm/v/@argyleio/argyle-plugin-react-native?style=for-the-badge)](https://www.npmjs.com/package/@argyleio/argyle-plugin-react-native)
+
+The following guide is intended for integrating Link 5. For Link 4 version [check here](https://github.com/argyle-systems/argyle-link-react-native/blob/a335340f01ba850a06452774b1dfd9580d81eba0/README.md)
+
 # Argyle React Native SDK
 
 Argyle’s React Native SDK provides a way to integrate [Link](https://docs.argyle.com/guides/docs/argyle-link-overview) into your React Native app.
