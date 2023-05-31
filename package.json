@@ -11,7 +11,7 @@
     "clean:auto": "react-native clean-project-auto"
   },
   "dependencies": {
-    "@argyleio/argyle-plugin-react-native": "5.1.0",
+    "@argyleio/argyle-plugin-react-native": "5.1.1",
     "@react-native-community/async-storage": "latest",
     "react": "18.1.0",
     "react-native": "0.70.6",
