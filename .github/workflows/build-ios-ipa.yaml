@@ -67,6 +67,7 @@ jobs:
          -F 'data={"custom_id": "ios_react_latest"}'
   trigger-auto-tests:
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - uses: convictional/trigger-workflow-and-wait@v1.6.1
         with:
