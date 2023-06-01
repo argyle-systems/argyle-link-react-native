@@ -57,4 +57,4 @@ To prevent your API key and secret from being exposed on the front-end, [request
 
 ### 3. Integrate Link
 
-For detailed guidance on how to integrate our SDK please review the [example app](example/src/LinkExample.js), and also check out our [Link SDK Documentation](https://argyle.com/docs/link/overview).
+For detailed guidance on how to integrate our SDK please review the [example app](example/src/LinkExample.tsx), and also check out our [Link SDK Documentation](https://argyle.com/docs/link/overview).
