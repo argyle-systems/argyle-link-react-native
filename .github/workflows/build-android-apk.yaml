@@ -12,7 +12,7 @@ jobs:
       run: |
         cd example
         npm install
-  build-android:
+  build:
     needs: install-and-test
     runs-on: ubuntu-latest
     steps:
@@ -41,3 +41,15 @@ jobs:
     - name: Upload app to browserstack
       run: |
         curl -u ${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESSKEY }} -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@example/android/app/build/outputs/apk/release/app-release.apk" -F 'data={"custom_id": "android_react_latest"}'
+  trigger-auto-tests:
+    needs: build
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: argyle-systems
+          repo: argyle-qa-mobile
+          workflow_file_name: test_dev_rn_android.yaml
+          ref: master
+          client_payload: '{"id": "auto-trigger-android-rn-tests"}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          wait_workflow: true

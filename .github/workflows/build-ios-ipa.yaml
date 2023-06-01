@@ -65,3 +65,15 @@ jobs:
          -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
          -F "file=@example/ios/build-demo/LinkReactNative.ipa" \
          -F 'data={"custom_id": "ios_react_latest"}'
+  trigger-auto-tests:
+    needs: build
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: argyle-systems
+          repo: argyle-qa-mobile
+          workflow_file_name: test_dev_rn_ios.yaml
+          ref: master
+          client_payload: '{"id": "auto-trigger-ios-rn-tests"}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          wait_workflow: true
