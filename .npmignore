@@ -1,0 +1,7 @@
+example/
+CODEOWNERS
+.gitattributes
+.idea/
+.github/
+scripts/
+README-pub.md
