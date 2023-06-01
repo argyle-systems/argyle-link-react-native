@@ -1,0 +1,6 @@
+example/
+CODEOWNERS
+.gitattributes
+.idea/
+.github/
+scripts/

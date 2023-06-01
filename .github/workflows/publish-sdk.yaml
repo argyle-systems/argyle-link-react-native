@@ -1,0 +1,23 @@
+name: publish-sdk
+on:
+  push:
+    tags:
+      - '*.*.*'
+jobs:
+  publish-sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.2
+
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+
+      - id: tag
+        run: echo "DEPLOY_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Publish SDK
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_AUTH_TOKEN }}" >> .npmrc
+          sed -i "s/%LINK_VERSION%/${{ steps.tag.outputs.DEPLOY_TAG }}/g" package.json
+          npm publish

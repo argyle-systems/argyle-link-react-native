@@ -1,0 +1,79 @@
+name: build-ios-ipa
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '14.2'
+
+    - uses: actions/checkout@v3.5.2
+
+    - name: Install npm dependencies and add dummy version to package.json
+      run: |
+        sed -i.bak "s/%LINK_VERSION%/0.0.1/g" package.json
+        cd example
+        npm install
+
+    - name: Overwrite index.js
+      run: |
+        cd example
+        rm index.js
+        mv json-demo-build.js index.js
+
+    - name: Overwrite node module
+      run: |
+        rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
+
+    - name: Import Codesigning Certificate
+      uses: apple-actions/import-codesign-certs@v1
+      with:
+        p12-file-base64: ${{ secrets.BUILD_ID_CERT_BASE64 }}
+        p12-password: ${{ secrets.BUILD_ID_CERT_PASS }}
+
+    - name: Install Provisioning Profile
+      uses: akiojin/install-provisioning-profile-github-action@v1.0
+      with:
+        base64: ${{ secrets.BUILD_ID_PROVISIONING }}
+
+    - name: Cocoapods install
+      run: |
+        cd example/ios
+        pod install
+
+    - name: Build App
+      run: |
+        cd example/ios
+        xcodebuild -workspace LinkReactNative.xcworkspace -scheme LinkReactNative -configuration Release -sdk iphoneos -archivePath demo.xcarchive archive CODE_SIGN_STYLE=Manual
+        xcodebuild -exportArchive -archivePath ./demo.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build-demo
+
+    - name: Archive IPA
+      uses: actions/upload-artifact@v3
+      with:
+        name: ipa-LinkReactNative
+        path: example/ios/build-demo/LinkReactNative.ipa
+
+    - name: Upload app to browserstack
+      run: |
+        curl \
+         -u ${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESSKEY }} \
+         -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+         -F "file=@example/ios/build-demo/LinkReactNative.ipa" \
+         -F 'data={"custom_id": "ios_react_latest"}'
+  trigger-auto-tests:
+    needs: build
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: argyle-systems
+          repo: argyle-qa-mobile
+          workflow_file_name: test_dev_rn_ios.yaml
+          ref: master
+          client_payload: '{"id": "auto-trigger-ios-rn-tests"}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          wait_workflow: true
