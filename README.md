@@ -1,106 +1,60 @@
-[![npm](https://img.shields.io/npm/v/@argyleio/argyle-plugin-react-native?style=for-the-badge)](https://www.npmjs.com/package/@argyleio/argyle-plugin-react-native)
-
-The following guide is intended for integrating Link 5. For Link 4 version [check here](https://github.com/argyle-systems/argyle-link-react-native/blob/a335340f01ba850a06452774b1dfd9580d81eba0/README.md)
-
 # Argyle React Native SDK
 
-Argyle’s React Native SDK provides a way to integrate [Link](https://docs.argyle.com/guides/docs/argyle-link-overview) into your React Native app.
+Argyle Link React Native SDK provides a way to integrate [Argyle Link](https://argyle.com/docs/link/overview) into your React Native app.
 
-First-time installation instructions are below. To update versions, visit our [upgrade guide](https://github.com/argyle-systems/argyle-link-react-native/blob/master/UPGRADING.md).
+If you are looking to update Argyle Link to the newest version, navigate to [upgrade guide](UPGRADING.md).
 
-**************************Requirements:**************************
-
-- React Native version 0.65.0 or higher
-
-**iOS-specific requirements:**
+**Requirements for iOS:**
 
 - The minimum deployment target needs to be at least 14.0
+- Required react-native version 0.60.x+
 
-**Android-specific requirements:**
+**Requirements for Android:**
 
-- If you are using tools like ProGuard to obfuscate your code…
-    - Make sure to exclude the Link SDK package `com.argyle.*`
-    - For example, add the following line to the bottom of your ProGuard configuration:
-    
-    ```
-    -keep class com.argyle. { *; }
-    ```
-    
-- In case of runtime issues related to the `okhttp3` library…
-    - The Link SDK package currently has a dependency of `okhttp3:4.9.2`
-    - If your dependencies use an older version (e.g. `okhttp3.3.xx`) they may need updating to a version that uses `okhttp3.4.x.x`
-    - Alternatively, you can attempt to force the Link SDK dependency as follows:
-    
-    ```
-    configurations.all {
-        resolutionStrategy.force 'com.squareup.okhttp3:okhttp:4.9.x'
-        resolutionStrategy.force 'com.squareup.okhttp3:okhttp-urlconnection:4.9.x'
-    }
-    ```
-    
+- The `minSdkVersion` need to be at least `26`
 
-## Installing the SDK
+**Important:** When using tools like Proguard to obfuscate your code, make sure to exclude Android Link SDK package (`com.argyle.*`) from the process, it may cause unexpected runtime issues otherwise. You can do this by adding this line to your `proguard-rules.pro:-keep class com.argyle. { *; }`
 
-1. Navigate to the directory for your React Native project
-2. Install the packages from your terminal…
-
-**…using NPM:**
-
-`npm install @argyleio/argyle-plugin-react-native --save`
-
-**…using yarn:**
-
-`yarn add @argyleio/argyle-plugin-react-native`
-
-1. Type `cd ios` to navigate to `ios` folder
-2. Type `pod install` to install the Argyle pod
-3. Type `pod update` to ensure the most recent Argyle pod is installed
-
-## Implementing Link
-
-1. Log-in to Console and retrieve a copy of your [Link key](https://console.argyle.com/link-key)
-2. Create a user token:
-- **New users**
-    1. Create a new user by sending a **POST** to the [users endpoint](https://docs.argyle.com/guides/reference/create-a-user) of the Argyle API
-    2. The response payload will include an `id` and `user_token`
-    3. Save the `id` for quickly creating user tokens for this user in the future
-    4. Initialize Link by passing the `user_token` as the value for the `userToken` parameter
-- **Returning users**
-    1. Send a **POST** request to the [user-tokens endpoint](https://docs.argyle.com/guides/reference/create-a-user-token) of the Argyle API
-        - Include the `id` of the user in the request body as a JSON object in the format `{"user": "<id>"}`
-    2. A `user_token` will be included in the response payload
-    3. Initialize Link by passing the `user_token` as the value for the `userToken` parameter
-1. Initialize Link using the Link key and user token. 
-
-<aside>
-ℹ️ Make sure the Link key matches the environment of the `sandbox` parameter.
-</aside>
-
-
-Example Link initialization using React Native:
-
-```js
-import { ArgyleLink } from '@argyleio/argyle-plugin-react-native';
-
-// ...
-
-const config = {
-    linkKey: 'YOUR_LINK_KEY',
-    userToken: 'USER_TOKEN',
-    sandbox: true, // Set to false for production environment.
-    // (Optional) Limit Link search to these Items:
-    items: ['item_000001422', 'item_000025742'],
-    // (Optional) Callback examples:	
-    onAccountConnected: payload => console.log('onAccountConnected', payload),
-    onAccountError: payload => console.log('onAccountError', payload),
-    onDDSSucess: payload => console.log('onDDSSuccess', payload),
-    onDDSError: payload => console.log('onDDSError', payload),
-    onTokenExpired: updateToken => {
-        console.log('onTokenExpired')
-        // generate your new token here
-        // updateToken(newToken)
-    }
-}
-
-ArgyleLink.start(config)
+In case of runtime issues related to `okhttp3` library, note that Link SDK currently has a dependency of `okhttp3:4.9.2` but in case some of your dependencies use an older version (`okhttp3:3.x.x`) they may need updating to a version that also uses `okhttp3:4.x.x`. Alternatively, you may try forcing the version of the dependency as follows:
 ```
+configurations.all {
+    resolutionStrategy.force 'com.squareup.okhttp3:okhttp:4.9.x'
+    resolutionStrategy.force 'com.squareup.okhttp3:okhttp-urlconnection:4.9.x'
+}
+```
+
+## 1. Add the SDK dependency
+
+[![npm](https://img.shields.io/npm/v/@argyleio/argyle-plugin-react-native?style=for-the-badge)](https://www.npmjs.com/package/@argyleio/argyle-plugin-react-native)
+
+`$ npm install @argyleio/argyle-plugin-react-native --save` or
+
+`$ yarn add @argyleio/argyle-plugin-react-native`
+
+Update the Argyle pod with:
+
+`$ cd ios`
+
+`$ pod install`
+
+`$ pod update`
+
+in case not the most recent version of Argyle pod was installed.
+
+--- 
+
+## 2. Configure and integrate Link
+
+### 1. Access your Link API Key
+
+1. Log into your [Console](https://console.argyle.com/api-keys) instance
+2. Navigate to the [API Keys](https://console.argyle.com/api-keys) area under the Developer menu
+3. Copy your Sandbox or Production Link API Key for use in the next steps
+
+### 2. Utilize user tokens
+
+To prevent your API key and secret from being exposed on the front-end, [request user tokens on your server side](https://argyle.com/docs/link/user-tokens#creating-a-user-token).
+
+### 3. Integrate Link
+
+For detailed guidance on how to integrate our SDK please review the [example app](example/src/LinkExample.js), and also check out our [Link SDK Documentation](https://argyle.com/docs/link/overview).
