@@ -64,4 +64,4 @@ jobs:
           ref: master
           client_payload: '{"id": "auto-trigger-android-rn-tests"}'
           github_token: ${{ secrets.ARGYLE_LINK_QA_WORKFLOW_TRIGGER }}
-          wait_workflow: true
+          wait_workflow: false
