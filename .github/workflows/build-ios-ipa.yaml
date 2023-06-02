@@ -33,15 +33,15 @@ jobs:
         rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
 
     - name: Import Codesigning Certificate
-      uses: apple-actions/import-codesign-certs@v1.0.2
+      uses: apple-actions/import-codesign-certs@v2
       with:
-        p12-file-base64: ${{ secrets.BUILD_ID_CERT_BASE64 }}
-        p12-password: ${{ secrets.BUILD_ID_CERT_PASS }}
+        p12-file-base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_P12 }}
+        p12-password: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_PASS }}
 
     - name: Install Provisioning Profile
       uses: akiojin/install-provisioning-profile-github-action@v1.0
       with:
-        base64: ${{ secrets.BUILD_ID_PROVISIONING }}
+        base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_PROVISIONING }}
 
     - name: Cocoapods install
       run: |
@@ -72,7 +72,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+      - uses: convictional/trigger-workflow-and-wait@v1.6.5
         with:
           owner: argyle-systems
           repo: argyle-qa-mobile
@@ -80,4 +80,4 @@ jobs:
           ref: master
           client_payload: '{"id": "auto-trigger-ios-rn-tests"}'
           github_token: ${{ secrets.ARGYLE_LINK_QA_WORKFLOW_TRIGGER }}
-          wait_workflow: true
+          wait_workflow: false

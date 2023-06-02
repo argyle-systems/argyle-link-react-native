@@ -56,7 +56,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+      - uses: convictional/trigger-workflow-and-wait@v1.6.5
         with:
           owner: argyle-systems
           repo: argyle-qa-mobile
@@ -64,4 +64,4 @@ jobs:
           ref: master
           client_payload: '{"id": "auto-trigger-android-rn-tests"}'
           github_token: ${{ secrets.ARGYLE_LINK_QA_WORKFLOW_TRIGGER }}
-          wait_workflow: true
+          wait_workflow: false
