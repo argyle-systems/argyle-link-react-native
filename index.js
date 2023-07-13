@@ -23,10 +23,10 @@ export class ArgyleLink {
   static listeners = {}
 
   static start(config) {
-    const {linkKey, sandbox, userToken} = config
+    const {sandbox, userToken} = config
 
-    if (linkKey === undefined || sandbox === undefined || userToken === undefined) {
-      throw '[ArgyleLink] linkKey, userToken and sandbox must be defined.'
+    if (sandbox === undefined || userToken === undefined) {
+      throw '[ArgyleLink] userToken and sandbox must be defined.'
     }
 
     callbacks.forEach(name => {

@@ -24,7 +24,6 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
     @ReactMethod
     fun start(config: ReadableMap) {
         val nativeConfig = LinkConfig(
-            linkKey = config.getString("linkKey")!!,
             userToken = config.getString("userToken")!!,
             sandbox = config.getBoolean("sandbox")
         )
