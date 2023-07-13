@@ -15,7 +15,6 @@ export const LinkExample = (): JSX.Element => {
 
   const start = () => {
     const config = {
-      linkKey: 'LINK_KEY',
       userToken: 'USER_TOKEN',
       sandbox: true,
       onAccountCreated: (response: AccountCallbackPayload) =>
