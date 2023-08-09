@@ -4,10 +4,11 @@ Argyle Link React Native SDK provides a way to integrate [Argyle Link](https://a
 
 If you are looking to update Argyle Link to the newest version, navigate to [upgrade guide](UPGRADING.md).
 
+- Required react-native version 0.68.x+
+
 **Requirements for iOS:**
 
 - The minimum deployment target needs to be at least 14.0
-- Required react-native version 0.60.x+
 
 **Requirements for Android:**
 
