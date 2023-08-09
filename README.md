@@ -13,6 +13,10 @@ If you are looking to update Argyle Link to the newest version, navigate to [upg
 **Requirements for Android:**
 
 - The `minSdkVersion` need to be at least `26`
+- Android 8.0 (API level 26)+
+- Kotlin 1.7.10+
+- Android Gradle Plugin 7.2+
+- Gradle 7.2+
 
 **Important:** When using tools like Proguard to obfuscate your code, make sure to exclude Android Link SDK package (`com.argyle.*`) from the process, it may cause unexpected runtime issues otherwise. You can do this by adding this line to your `proguard-rules.pro:-keep class com.argyle. { *; }`
 
