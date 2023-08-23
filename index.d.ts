@@ -23,7 +23,10 @@ type TokenExpiredCallback = (updateToken: (token: string) => void) => void
 type FormCallback = (payload: FormCallbackPayload) => void
 
 export interface LinkConfig {
-    linkKey: string
+    /**
+     * @deprecated The use of `linkKey` has been discontinued. `LinkConfig` can now be initialized without it.
+     */
+    linkKey?: string
     sandbox: boolean
     userToken: string
     flowId?: string

@@ -63,7 +63,7 @@ jobs:
     - name: Upload app to browserstack
       run: |
         curl \
-         -u ${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESSKEY }} \
+         -u ${{ secrets.ARGYLE_MOBILE_RUN_BS_USER }}:${{ secrets.ARGYLE_MOBILE_RUN_BS_KEY }} \
          -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
          -F "file=@example/ios/build-demo/LinkReactNative.ipa" \
          -F 'data={"custom_id": "ios_react_latest"}'
