@@ -22,12 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3.5.3
 
-    - uses: github/codeql-action/init@v2.3.6
+    - uses: github/codeql-action/init@v2.21.5
       with:
         languages: javascript
 
-    - uses: github/codeql-action/autobuild@v2.3.6
+    - uses: github/codeql-action/autobuild@v2.21.5
 
-    - uses: github/codeql-action/analyze@v2.3.6
+    - uses: github/codeql-action/analyze@v2.21.5
       with:
         category: "/language:javascript"
