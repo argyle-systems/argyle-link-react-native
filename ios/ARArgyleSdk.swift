@@ -91,6 +91,9 @@ class ARArgyleSdk: RCTEventEmitter {
                     case .INCOMPATIBLE_DDS_CONFIG:
                         translatedError = "incompatible_dds_config"
                         break
+                    case .GIG_ITEMS_NOT_SUPPORTED:
+                        translatedError = "gig_items_not_supported"
+                        break
                     default:
                         translatedError = "generic"
                     }

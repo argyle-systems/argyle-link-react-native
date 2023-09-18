@@ -51,6 +51,7 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
                     LinkError.Type.EXPIRED_USER_TOKEN -> "expired_user_token"
                     LinkError.Type.DDS_NOT_SUPPORTED -> "dds_not_supported"
                     LinkError.Type.INCOMPATIBLE_DDS_CONFIG -> "incompatible_dds_config"
+                    LinkError.Type.GIG_ITEMS_NOT_SUPPORTED -> "gig_items_not_supported"
                     LinkError.Type.GENERIC -> "generic"
                 }
 
