@@ -94,6 +94,9 @@ class ARArgyleSdk: RCTEventEmitter {
                     case .GIG_ITEMS_NOT_SUPPORTED:
                         translatedError = "gig_items_not_supported"
                         break
+                    case .BENEFITS_ITEMS_NOT_SUPPORTED:
+                        translatedError = "benefits_items_not_supported"
+                        break
                     default:
                         translatedError = "generic"
                     }
