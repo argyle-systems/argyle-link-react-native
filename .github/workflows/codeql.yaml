@@ -20,7 +20,7 @@ jobs:
       security-events: write
 
     steps:
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@v4.1.1
 
     - uses: github/codeql-action/init@v2.21.9
       with:

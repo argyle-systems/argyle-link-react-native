@@ -14,7 +14,7 @@ jobs:
       with:
         xcode-version: '14.2'
 
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@v4.1.1
 
     - name: Install npm dependencies and add dummy version to package.json
       run: |
