@@ -3,8 +3,7 @@ name: build-android-apk
 on:
   workflow_dispatch:
   push:
-    branches:
-      - '**'
+    branches: [master]
 
 jobs:
   install-and-test:
