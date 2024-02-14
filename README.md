@@ -14,9 +14,9 @@ If you are looking to update Argyle Link to the newest version, navigate to [upg
 
 - The `minSdkVersion` need to be at least `26`
 - Android 8.0 (API level 26)+
-- Kotlin 1.7.10+
+- Kotlin 1.8.0+
 - Android Gradle Plugin 7.2+
-- Gradle 7.2+
+- Gradle 8.3+
 
 **Important:** When using tools like Proguard to obfuscate your code, make sure to exclude Android Link SDK package (`com.argyle.*`) from the process, it may cause unexpected runtime issues otherwise. You can do this by adding this line to your `proguard-rules.pro:-keep class com.argyle. { *; }`
 
@@ -50,16 +50,10 @@ in case not the most recent version of Argyle pod was installed.
 
 ## 2. Configure and integrate Link
 
-### 1. Access your Link API Key
-
-1. Log into your [Console](https://console.argyle.com/api-keys) instance
-2. Navigate to the [API Keys](https://console.argyle.com/api-keys) area under the Developer menu
-3. Copy your Sandbox or Production Link API Key for use in the next steps
-
-### 2. Utilize user tokens
+### 1. Utilize user tokens
 
 To prevent your API key and secret from being exposed on the front-end, [request user tokens on your server side](https://argyle.com/docs/link/user-tokens#creating-a-user-token).
 
-### 3. Integrate Link
+### 2. Integrate Link
 
 For detailed guidance on how to integrate our SDK please review the [example app](example/src/LinkExample.tsx), and also check out our [Link SDK Documentation](https://argyle.com/docs/link/overview).
