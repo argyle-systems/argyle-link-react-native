@@ -1,7 +1,7 @@
 PODS:
-  - Argyle (5.6.0)
-  - argyle-plugin-react-native (5.5.1):
-    - Argyle (= 5.6.0)
+  - Argyle (5.7.0)
+  - argyle-plugin-react-native (0.0.1):
+    - Argyle (= 5.7.0)
     - React
   - boost (1.83.0)
   - CocoaAsyncSocket (7.6.5)
@@ -1115,7 +1115,7 @@ PODS:
     - React-jsi (= 0.73.1)
     - React-logger (= 0.73.1)
     - React-perflogger (= 0.73.1)
-  - RNCClipboard (1.13.1):
+  - RNCClipboard (1.14.0):
     - React-Core
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
@@ -1318,8 +1318,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: 73916bd6f7e1c1497952d544e48126c61b81ffb7
-  argyle-plugin-react-native: 95b00613092adfd212ea6070ca016672fa7c9c3b
+  Argyle: a86ac6b1af5bf2876463459f9ff152ac66363dca
+  argyle-plugin-react-native: 3d6db076de2137640ebe2356eb546adbd12b8b38
   boost: 26fad476bfa736552bbfa698a06cc530475c1505
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
@@ -1379,10 +1379,10 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 93a4c84e46a85c3fc9678abd4f6923b785226ea7
   React-utils: debda2c206770ee2785bdebb7f16d8db9f18838a
   ReactCommon: ddb128564dcbfa0287d3d1a2d10f8c7457c971f6
-  RNCClipboard: 90e241893de33a2f5962fc34d76ada4576033e49
+  RNCClipboard: 090462274cc05b02628bd158baf6d73c3abe8441
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 2b33a7ac96c58cdaa7b810948fc6a2a76ed2d108
 
 PODFILE CHECKSUM: d778f04d1ea34caf3a428a92d0514b83355d7a98
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2

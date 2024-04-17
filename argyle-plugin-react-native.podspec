@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency 'Argyle', '5.6.0'
+  s.dependency 'Argyle', '5.7.0'
 end
 
