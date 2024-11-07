@@ -1,7 +1,7 @@
 PODS:
-  - Argyle (5.9.0)
-  - argyle-plugin-react-native (5.9.0):
-    - Argyle (= 5.9.0)
+  - Argyle (5.10.0)
+  - argyle-plugin-react-native (5.10.0):
+    - Argyle (= 5.10.0)
     - React
   - boost (1.83.0)
   - CocoaAsyncSocket (7.6.5)
@@ -1318,8 +1318,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: df81e503e6c2bb17dabc238934b7ba775c3a719d
-  argyle-plugin-react-native: 42296258034dc9b9b34c66fe20faa164f2607517
+  Argyle: 188b56666f40a87de7693784e434d0495cae9517
+  argyle-plugin-react-native: 10f269ed2a95c045e1331b06213fca97361169be
   boost: 26fad476bfa736552bbfa698a06cc530475c1505
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
@@ -1381,8 +1381,8 @@ SPEC CHECKSUMS:
   ReactCommon: ddb128564dcbfa0287d3d1a2d10f8c7457c971f6
   RNCClipboard: 5e503962f0719ace8f7fdfe9c60282b526305c85
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  Yoga: 2b33a7ac96c58cdaa7b810948fc6a2a76ed2d108
+  Yoga: 4f53dc50008d626fa679c7a1cb4bed898f8c0bde
 
 PODFILE CHECKSUM: d778f04d1ea34caf3a428a92d0514b83355d7a98
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
