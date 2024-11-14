@@ -49,7 +49,7 @@ jobs:
         ./gradlew assembleRelease
 
     - name: Archive APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: apk-app-development-release
         path: example/android/app/build/outputs/apk/release/app-release.apk
