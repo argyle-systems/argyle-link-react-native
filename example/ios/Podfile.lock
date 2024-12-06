@@ -1,7 +1,7 @@
 PODS:
-  - Argyle (5.11.0)
-  - argyle-plugin-react-native (5.11.0):
-    - Argyle (= 5.11.0)
+  - Argyle (5.11.1)
+  - argyle-plugin-react-native (5.11.1):
+    - Argyle (= 5.11.1)
     - React
   - boost (1.83.0)
   - CocoaAsyncSocket (7.6.5)
@@ -1318,8 +1318,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: 87e35cd1f61bc19dae7c586efd87b45322601d71
-  argyle-plugin-react-native: 142ba3e3fc31454ead632b9c2dc9c85044a53bd7
+  Argyle: ad4a6b17ed76f752bd5680a82566a8f54f55fb97
+  argyle-plugin-react-native: 8b6b6609b3439983055aed84b773e213cd324529
   boost: 26fad476bfa736552bbfa698a06cc530475c1505
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
