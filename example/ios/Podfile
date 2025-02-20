@@ -45,6 +45,14 @@ target 'LinkReactNative' do
   end
 
   post_install do |installer|
+    installer.pod_targets.each do |pod|
+      if pod.name.include?("boost")
+        pod.specs.each do |spec|
+          spec.attributes_hash.delete('checksum')
+          puts "Removed checksum from #{spec.name} in pod #{pod.name}"
+        end
+      end
+    end
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
