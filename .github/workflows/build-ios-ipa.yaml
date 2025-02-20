@@ -46,6 +46,16 @@ jobs:
       with:
         base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_PROVISIONING }}
 
+    - name: Patch Boost podspec to remove sha256 checksum
+      run: |
+        if [[ "$(uname)" == "Darwin" ]]; then
+          sed -i '' '/:sha256/d' node_modules/react-native/third-party-podspecs/boost.podspec
+        else
+          sed -i '/:sha256/d' node_modules/react-native/third-party-podspecs/boost.podspec
+        fi
+        echo "Modified podspec:"
+        grep ":sha256" node_modules/react-native/third-party-podspecs/boost.podspec || echo "No sha256 line found."
+
     - name: Cocoapods install
       run: |
         sudo gem install cocoapods -v 1.16.2
