@@ -45,7 +45,7 @@ jobs:
 
     - name: Cocoapods install
       run: |
-        sudo gem install cocoapods -v 1.15.2
+        sudo gem install cocoapods -v 1.16.2
         cd example/ios
         pod install
 
