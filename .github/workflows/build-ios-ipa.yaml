@@ -50,7 +50,7 @@ jobs:
       run: |
         cd example
         sed -i '' 's|s\.source = { :http => "[^"]*" }|s.source = { :http => "https://sourceforge.net/projects/boost/files/boost/1.83.0/boost_1_83_0.tar.bz2" }|' node_modules/react-native/third-party-pods/boost.podspec
-        grep "s.source" node_modules/react-native/third-party-pods/boost.podspec
+        grep "s.source" node_modules/react-native/third-party-podspecs/boost.podspec
 
     - name: Cocoapods install
       run: |
