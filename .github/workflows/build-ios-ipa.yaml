@@ -48,6 +48,7 @@ jobs:
 
     - name: Patch Boost podspec to remove sha256 checksum
       run: |
+        cd example
         if [[ "$(uname)" == "Darwin" ]]; then
           sed -i '' '/:sha256/d' node_modules/react-native/third-party-podspecs/boost.podspec
         else
