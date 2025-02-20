@@ -47,7 +47,9 @@ jobs:
       run: |
         sudo gem install cocoapods -v 1.16.2
         cd example/ios
-        pod install
+        rm -rf Pods ~/Library/Caches/CocoaPods
+        pod repo update
+        pod install --clean-install --verbose
 
     - name: Build App
       run: |
