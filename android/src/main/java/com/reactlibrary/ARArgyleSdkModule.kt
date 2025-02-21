@@ -53,6 +53,7 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
                     LinkError.Type.INCOMPATIBLE_DDS_CONFIG -> "incompatible_dds_config"
                     LinkError.Type.GIG_ITEMS_NOT_SUPPORTED -> "gig_items_not_supported"
                     LinkError.Type.BENEFITS_ITEMS_NOT_SUPPORTED -> "benefits_items_not_supported"
+                    LinkError.Type.EXCLUDED_ITEM -> "excluded_item"
                     LinkError.Type.GENERIC -> "generic"
                 }
 
