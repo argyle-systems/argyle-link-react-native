@@ -49,6 +49,7 @@ jobs:
     - name: Patch Boost podspec to remove sha256 checksum
       run: |
         cd example
+        perl -0777 -pi -e "s#:http\s*=>\s*'[^']*'#:http => 'https://downloads.sourceforge.net/project/boost/boost/1.83.0/boost_1_83_0.tar.bz2'#g" node_modules/react-native/third-party-podspecs/boost.podspec
         perl -0777 -pe "s/\s*,?\s*:sha256\s*=>\s*'[^']*'//g" -i node_modules/react-native/third-party-podspecs/boost.podspec
         echo "Modified podspec:"
         cat node_modules/react-native/third-party-podspecs/boost.podspec
