@@ -49,13 +49,9 @@ jobs:
     - name: Patch Boost podspec to remove sha256 checksum
       run: |
         cd example
-        if [[ "$(uname)" == "Darwin" ]]; then
-          sed -i '' '/:sha256/d' node_modules/react-native/third-party-podspecs/boost.podspec
-        else
-          sed -i '/:sha256/d' node_modules/react-native/third-party-podspecs/boost.podspec
-        fi
+        perl -0777 -pe "s/\s*,?\s*:sha256\s*=>\s*'[^']*'//g" -i node_modules/react-native/third-party-podspecs/boost.podspec
         echo "Modified podspec:"
-        grep ":sha256" node_modules/react-native/third-party-podspecs/boost.podspec || echo "No sha256 line found."
+        cat node_modules/react-native/third-party-podspecs/boost.podspec
 
     - name: Cocoapods install
       run: |
