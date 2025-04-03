@@ -3,7 +3,8 @@ name: build-ios-ipa
 on:
   workflow_dispatch:
   push:
-    branches: *
+    branches:
+      - '**'
 
 jobs:
   build:
