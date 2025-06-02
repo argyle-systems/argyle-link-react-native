@@ -1,5 +1,5 @@
-import {Language} from "./Language";
-export {Language};
+import {Language} from './language'
+export {Language}
 
 export interface AccountCallbackPayload {
     accountId: string
@@ -24,6 +24,7 @@ type UIEventCallback = (payload: any) => void
 type ErrorCallback = (payload: ErrorCallbackPayload) => void
 type TokenExpiredCallback = (updateToken: (token: string) => void) => void
 type FormCallback = (payload: FormCallbackPayload) => void
+type Language = (typeof Language)[keyof typeof Language]
 
 export interface LinkConfig {
     /**

@@ -1,5 +1,5 @@
 import {NativeModules, NativeEventEmitter} from 'react-native'
-export {Language} from "./Language";
+export {Language} from './language'
 
 const {ARArgyleSdk} = NativeModules
 

@@ -59,12 +59,4 @@ Emitted 'error' event on NodeWatcher instance at:
 }
 ```
 
-```bash
-rm -rf node_modules
-npm install
-export WATCHMAN_DISABLE=true
-
-cd ..
-rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
-cd example
-```
+Add an environment variable `export WATCHMAN_DISABLE=true`
