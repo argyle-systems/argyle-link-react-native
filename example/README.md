@@ -1,79 +1,70 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Instructions on how to run example app locally
 
-# Getting Started
-
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
+1. Go to SDK [`package.json`](../package.json) and replace `%LINK_VERSION%` with the latest release version
+2. 
 ```bash
-# using npm
-npm start
+cd example
+npm install
+```
+3.
+```bash
+cd ..
+rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
+cd example
+```
+Repeat step 3 every time something is changed on SDK code.
+   - Alternatively, work in `example/node_modules/@argyleio/argyle-plugin-react-native` and copy the changes to root when finished.
 
-# OR using Yarn
-yarn start
+## Android
+`npm run android`
+   - If it fails, use `npm start` + press a
+
+## iOS
+
+1. Use XCode 16.2 due to this [bug](https://github.com/facebook/react-native/issues/50411)
+   -  [How to downgrade](https://github.com/facebook/react-native/issues/50411#issuecomment-2768819763)
+2. Replace boost URL in [`example/node_modules/node_modules/react-native/third-party-podspecs/boost.podspec`](node_modules/react-native/third-party-podspecs/boost.podspec) due to this [bug](https://github.com/facebook/react-native/issues/42110).
+```diff
+-spec.source = { :http => 'https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2',
++spec.source = { :http => 'https://archives.boost.io/release/1.83.0/source/boost_1_83_0.tar.bz2',
+```
+3.
+```bash
+cd ios
+rm Podfile.lock
+pod install
+```
+4.
+`npm run ios`
+- If it fails, use `npm start` + press i
+
+## Common issues
+
+### Too many open files
+```text
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EMFILE: too many open files, watch
+    at FSWatcher._handle.onchange (node:internal/fs/watchers:207:21)
+Emitted 'error' event on NodeWatcher instance at:
+    at FSWatcher._checkedEmitError (/Users/mind/Projects/argyle-link-react-native/example/node_modules/metro-file-map/src/watchers/NodeWatcher.js:82:12)
+    at FSWatcher.emit (node:events:524:28)
+    at FSWatcher._handle.onchange (node:internal/fs/watchers:213:12) {
+  errno: -24,
+  syscall: 'watch',
+  code: 'EMFILE',
+  filename: null
+}
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
 ```bash
-# using npm
-npm run android
+rm -rf node_modules
+npm install
+export WATCHMAN_DISABLE=true
 
-# OR using Yarn
-yarn android
+cd ..
+rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
+cd example
 ```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

@@ -51,6 +51,7 @@ class ARArgyleSdk: RCTEventEmitter {
             (config.value(forKey: "flowId") as? String).map { nativeConfig.flowId = $0 }
             (config.value(forKey: "accountId") as? String).map { nativeConfig.accountId = $0 }
             (config.value(forKey: "ddsConfig") as? String).map { nativeConfig.ddsConfig = $0 }
+            (config.value(forKey: "language") as? String).map { nativeConfig.language = Language(rawValue: $0) ?? .EN }
             (config.value(forKey: "items") as? NSArray).map {
                 let items = $0.compactMap({ $0 as? String })
                 nativeConfig.items = items

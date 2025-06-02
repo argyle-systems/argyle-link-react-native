@@ -1,3 +1,6 @@
+import {Language} from "./Language";
+export {Language};
+
 export interface AccountCallbackPayload {
     accountId: string
     userId: string
@@ -30,6 +33,7 @@ export interface LinkConfig {
     sandbox: boolean
     userToken: string
     flowId?: string
+    language?: Language,
     /**
      * @deprecated Use flowId instead
      */
