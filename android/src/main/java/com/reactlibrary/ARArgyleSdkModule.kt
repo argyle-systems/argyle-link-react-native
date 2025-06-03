@@ -4,6 +4,7 @@ import android.content.Context
 import com.argyle.AccountData
 import com.argyle.LinkConfig
 import com.argyle.ArgyleLink
+import com.argyle.Language
 import com.argyle.LinkError
 import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule
@@ -34,6 +35,13 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
         config.getString("flowId")?.let { nativeConfig.flowId = it }
         config.getString("accountId")?.let { nativeConfig.accountId = it }
         config.getString("ddsConfig")?.let { nativeConfig.ddsConfig = it }
+        config.getString("language")?.let {
+            nativeConfig.language = try {
+                Language.valueOf(it)
+            } catch (e: IllegalArgumentException) {
+                Language.EN
+            }
+        }
         config.getArray("items")?.let {
             nativeConfig.items = it.toArrayList().filterIsInstance<String>()
         }

@@ -1,3 +1,6 @@
+import {Language} from './language'
+export {Language}
+
 export interface AccountCallbackPayload {
     accountId: string
     userId: string
@@ -21,6 +24,7 @@ type UIEventCallback = (payload: any) => void
 type ErrorCallback = (payload: ErrorCallbackPayload) => void
 type TokenExpiredCallback = (updateToken: (token: string) => void) => void
 type FormCallback = (payload: FormCallbackPayload) => void
+type Language = (typeof Language)[keyof typeof Language]
 
 export interface LinkConfig {
     /**
@@ -30,6 +34,7 @@ export interface LinkConfig {
     sandbox: boolean
     userToken: string
     flowId?: string
+    language?: Language,
     /**
      * @deprecated Use flowId instead
      */

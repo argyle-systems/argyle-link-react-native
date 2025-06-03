@@ -4,6 +4,7 @@ import {
   AccountCallbackPayload,
   ArgyleLink,
   FormCallbackPayload,
+  Language,
 } from '@argyleio/argyle-plugin-react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -17,6 +18,7 @@ export const LinkExample = (): JSX.Element => {
     const config = {
       userToken: 'USER_TOKEN',
       sandbox: true,
+      language: Language.EN,
       onAccountCreated: (response: AccountCallbackPayload) =>
         callbackFired('onAccountCreated', response),
       onAccountConnected: (response: AccountCallbackPayload) =>
