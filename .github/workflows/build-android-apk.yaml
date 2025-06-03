@@ -66,14 +66,8 @@ jobs:
 
   trigger-auto-tests:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: convictional/trigger-workflow-and-wait@v1.6.5
-        with:
-          owner: argyle-systems
-          repo: argyle-qa-mobile
-          workflow_file_name: test_dev_rn_android.yaml
-          ref: master
-          client_payload: '{"id": "auto-trigger-android-rn-tests"}'
-          github_token: ${{ secrets.ARGYLE_LINK_QA_WORKFLOW_TRIGGER }}
-          wait_workflow: false
+    uses: argyle-systems/argyle-qa-mobile/.github/workflows/test_dev_rn_android.yaml@master
+    secrets: inherit
+    with:
+      id: android_dev-build-and-deploy
+
