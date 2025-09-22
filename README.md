@@ -18,7 +18,7 @@ Set the `minSdkVersion` in `android/app/build.gradle`:
 
 ```
 android {
-    compileSdk 34
+    compileSdk <sdk_version>
     defaultConfig {
         minSdk 26
         ...
