@@ -32,7 +32,7 @@ jobs:
         rm -rf node_modules
         npm config set cache "$HOME/.npm-cache"
         npm cache clean --force
-        npm install
+        npm install --force
 
     - name: Overwrite index.js
       run: |
