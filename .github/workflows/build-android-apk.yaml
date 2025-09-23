@@ -65,13 +65,4 @@ jobs:
       run: |
         curl -u ${{ secrets.ARGYLE_MOBILE_RUN_BS_USER }}:${{ secrets.ARGYLE_MOBILE_RUN_BS_KEY }} -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@example/android/app/build/outputs/apk/release/app-release.apk" -F 'data={"custom_id": "android_react_latest"}'
 
-  trigger-auto-tests:
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-    needs: build
-    uses: argyle-systems/argyle-qa-mobile/.github/workflows/test_dev_rn_android.yaml@master
-    secrets: inherit
-    with:
-      id: react_native_android_dev-build-and-deploy
 
