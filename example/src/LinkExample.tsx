@@ -7,8 +7,6 @@ import {
   Language,
 } from '@argyleio/argyle-plugin-react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
 export const LinkExample = (): JSX.Element => {
   const callbackFired = (key: string, response: any = {}) => {
     console.log('callback fired', key, response);
@@ -59,9 +57,7 @@ export const LinkExample = (): JSX.Element => {
 };
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: Colors.lighter,
-  },
+  background: {},
   welcome: {
     fontSize: 20,
     textAlign: 'center',

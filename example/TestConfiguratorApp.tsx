@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 import {AccountCallbackPayload, ArgyleLink, FormCallbackPayload} from '@argyleio/argyle-plugin-react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
-const parseJsonConfig = jsonConfig => {
+const parseJsonConfig = (jsonConfig: any) => {
   const parsed = JSON.parse(jsonConfig);
   return Object.entries(parsed).reduce(
     (result, [key, value]) => ({
@@ -103,9 +101,7 @@ function TestConfiguratorApp(): JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: Colors.lighter,
-  },
+  background: {},
   container: {
     flex: 1,
     justifyContent: 'center',

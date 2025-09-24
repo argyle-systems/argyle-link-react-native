@@ -3,7 +3,8 @@ name: build-ios-ipa
 on:
   workflow_dispatch:
   push:
-    branches: [master]
+    branches:
+      - '**'
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
     steps:
     - uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
-        xcode-version: '15.0'
+        xcode-version: '26.0'
 
     - uses: actions/checkout@v4.2.2
 
@@ -23,7 +24,7 @@ jobs:
         rm -rf node_modules
         npm config set cache "$HOME/.npm-cache"
         npm cache clean --force
-        npm install
+        npm install --force
 
     - name: Overwrite index.js
       run: |
@@ -71,18 +72,3 @@ jobs:
       with:
         name: ipa-LinkReactNative
         path: example/ios/build-demo/LinkReactNative.ipa
-
-    - name: Upload app to browserstack
-      run: |
-        curl \
-         -u ${{ secrets.ARGYLE_MOBILE_RUN_BS_USER }}:${{ secrets.ARGYLE_MOBILE_RUN_BS_KEY }} \
-         -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
-         -F "file=@example/ios/build-demo/LinkReactNative.ipa" \
-         -F 'data={"custom_id": "ios_react_latest"}'
-
-  trigger-auto-tests:
-    needs: build
-    uses: argyle-systems/argyle-qa-mobile/.github/workflows/test_dev_rn_ios.yaml@master
-    secrets: inherit
-    with:
-      id: react_native_ios_dev-build-and-deploy

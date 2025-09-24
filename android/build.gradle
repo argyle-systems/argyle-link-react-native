@@ -20,6 +20,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+  namespace = "com.reactlibrary"
   compileSdkVersion safeExtGet('compileSdkVersion')
 
   defaultConfig {

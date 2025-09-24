@@ -176,7 +176,7 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
             }
         }
 
-        ArgyleLink.start(context = currentActivity as Context, config = nativeConfig)
+        ArgyleLink.start(context = reactApplicationContext.currentActivity as Context, config = nativeConfig)
     }
 
     @ReactMethod

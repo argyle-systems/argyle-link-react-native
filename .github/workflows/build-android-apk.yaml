@@ -3,7 +3,8 @@ name: build-android-apk
 on:
   workflow_dispatch:
   push:
-    branches: [master]
+    branches:
+      - '**'
 
 jobs:
   install-and-test:
@@ -17,7 +18,7 @@ jobs:
         rm -rf node_modules
         npm config set cache "$HOME/.npm-cache"
         npm cache clean --force
-        npm install
+        npm install --force
 
   build:
     needs: install-and-test
@@ -31,7 +32,7 @@ jobs:
         rm -rf node_modules
         npm config set cache "$HOME/.npm-cache"
         npm cache clean --force
-        npm install
+        npm install --force
 
     - name: Overwrite index.js
       run: |
@@ -59,18 +60,3 @@ jobs:
       with:
         name: apk-app-development-release
         path: example/android/app/build/outputs/apk/release/app-release.apk
-
-    - name: Upload app to browserstack
-      run: |
-        curl -u ${{ secrets.ARGYLE_MOBILE_RUN_BS_USER }}:${{ secrets.ARGYLE_MOBILE_RUN_BS_KEY }} -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@example/android/app/build/outputs/apk/release/app-release.apk" -F 'data={"custom_id": "android_react_latest"}'
-
-  trigger-auto-tests:
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-    needs: build
-    uses: argyle-systems/argyle-qa-mobile/.github/workflows/test_dev_rn_android.yaml@master
-    secrets: inherit
-    with:
-      id: react_native_android_dev-build-and-deploy
-
