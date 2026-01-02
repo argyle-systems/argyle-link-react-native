@@ -1,8 +1,8 @@
 name: publish-sdk
 on:
   push:
-    branches:
-      - '**'
+    tags:
+      - '*.*.*'
 
 permissions:
   id-token: write  # Required for OIDC
@@ -19,6 +19,10 @@ jobs:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
 
+      - id: tag
+        run: echo "DEPLOY_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
       - name: Publish SDK
         run: |
-          npm publish --dry-run
+          sed -i "s/%LINK_VERSION%/${{ steps.tag.outputs.DEPLOY_TAG }}/g" package.json
+          npm publish
