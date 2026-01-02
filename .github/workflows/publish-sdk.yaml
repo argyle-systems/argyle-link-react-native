@@ -19,10 +19,6 @@ jobs:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
 
-#      - id: tag
-#        run: echo "DEPLOY_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
       - name: Publish SDK
         run: |
-#          sed -i "s/%LINK_VERSION%/${{ steps.tag.outputs.DEPLOY_TAG }}/g" package.json
           npm publish --dry-run
