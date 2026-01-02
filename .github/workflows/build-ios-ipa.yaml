@@ -43,7 +43,7 @@ jobs:
         p12-password: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_PASS }}
 
     - name: Install Provisioning Profile
-      uses: akiojin/install-provisioning-profile-github-action@v1
+      uses: akiojin/install-provisioning-profile-github-action@v1.0
       with:
         base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_PROVISIONING }}
 
