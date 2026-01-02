@@ -48,7 +48,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${safeExtGet('kotlinVersion')}"
     implementation "com.facebook.react:react-native:${safeExtGet('reactnativeVersion')}"
-    implementation 'com.argyle:argyle-link-android:5.15.2'
+    implementation 'com.argyle:argyle-link-android:5.15.4'
 }
 
 def configureReactNativePom(def pom) {
