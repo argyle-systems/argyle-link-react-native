@@ -11,11 +11,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: maxim-lobanov/setup-xcode@v1.6.0
+    - uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: '26.0'
 
-    - uses: actions/checkout@v4.2.2
+    - uses: actions/checkout@v4
 
     - name: Install npm dependencies and add dummy version to package.json
       run: |
@@ -43,7 +43,7 @@ jobs:
         p12-password: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_PASS }}
 
     - name: Install Provisioning Profile
-      uses: akiojin/install-provisioning-profile-github-action@v1.0
+      uses: akiojin/install-provisioning-profile-github-action@v1
       with:
         base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_PROVISIONING }}
 
