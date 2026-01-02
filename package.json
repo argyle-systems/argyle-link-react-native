@@ -1,7 +1,7 @@
 {
   "name": "@argyleio/argyle-plugin-react-native",
   "title": "Argyle Link React Native",
-  "version": "5.15.2",
+  "version": "%LINK_VERSION%",
   "description": "Argyle Link React Native SDK",
   "main": "index.js",
   "typings": "index.d.ts",
