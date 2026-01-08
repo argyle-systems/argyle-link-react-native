@@ -14,7 +14,7 @@
     "react-native": "0.81.4",
     "@react-native/new-app-screen": "0.81.4",
     "react-native-safe-area-context": "^5.5.2",
-    "@argyleio/argyle-plugin-react-native": "5.15.2",
+    "@argyleio/argyle-plugin-react-native": "lastest",
     "@react-native-clipboard/clipboard": "^1.11.1"
   },
   "devDependencies": {
