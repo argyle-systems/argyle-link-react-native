@@ -68,7 +68,7 @@ jobs:
         xcodebuild -exportArchive -archivePath ./demo.xcarchive -exportOptionsPlist ../../.github/configs/exportOptions.plist -exportPath build-demo
 
     - name: Archive IPA
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: ipa-LinkReactNative
         path: example/ios/build-demo/LinkReactNative.ipa
