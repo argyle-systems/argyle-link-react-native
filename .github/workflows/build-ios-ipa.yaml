@@ -11,11 +11,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: maxim-lobanov/setup-xcode@v1
+    - uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
       with:
         xcode-version: '26.0'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
     - name: Install npm dependencies and add dummy version to package.json
       run: |
@@ -37,13 +37,13 @@ jobs:
         rsync -Rr . example/node_modules/@argyleio/argyle-plugin-react-native
 
     - name: Import Codesigning Certificate
-      uses: apple-actions/import-codesign-certs@v3
+      uses: apple-actions/import-codesign-certs@63fff01cd422d4b7b855d40ca1e9d34d2de9427d # v3.0.0
       with:
         p12-file-base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_P12 }}
         p12-password: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_CERT_PASS }}
 
     - name: Install Provisioning Profile
-      uses: akiojin/install-provisioning-profile-github-action@v1.0
+      uses: akiojin/install-provisioning-profile-github-action@e3f58307bd921490aed4691bb568ce4eb2849c62 # v1.0
       with:
         base64: ${{ secrets.ARGYLE_LINK_IOS_SIGNING_PROVISIONING }}
 
@@ -68,7 +68,7 @@ jobs:
         xcodebuild -exportArchive -archivePath ./demo.xcarchive -exportOptionsPlist ../../.github/configs/exportOptions.plist -exportPath build-demo
 
     - name: Archive IPA
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
         name: ipa-LinkReactNative
         path: example/ios/build-demo/LinkReactNative.ipa
