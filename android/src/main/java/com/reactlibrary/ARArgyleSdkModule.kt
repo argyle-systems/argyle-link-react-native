@@ -25,11 +25,12 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
     @ReactMethod
     fun start(config: ReadableMap) {
         val nativeConfig = LinkConfig(
-            userToken = config.getString("userToken")!!,
+            userToken = config.getString("userToken"),
             sandbox = config.getBoolean("sandbox")
         )
 
         nativeConfig.wrapperSdk = "React Native"
+        config.getString("connectUrl")?.let { nativeConfig.connectUrl = it }
         config.getString("apiHost")?.let { nativeConfig.apiHost = it }
         config.getString("customizationId")?.let { nativeConfig.customizationId = it }
         config.getString("flowId")?.let { nativeConfig.flowId = it }

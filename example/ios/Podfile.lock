@@ -1,7 +1,7 @@
 PODS:
-  - Argyle (5.15.1)
-  - argyle-plugin-react-native (5.15.1):
-    - Argyle (= 5.15.1)
+  - Argyle (5.15.2)
+  - argyle-plugin-react-native (5.15.4):
+    - Argyle (= 5.15.2)
     - React
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
@@ -2610,8 +2610,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: 2292a96a1567e367844e84a5c1bb03ce33ef5ef2
-  argyle-plugin-react-native: ca7f304951d87338875fd42682819800e12cc4c1
+  Argyle: a1b09dea04d4276b3840fb1316874e3fabf1f84a
+  argyle-plugin-react-native: 2653a80cd7fdf2b38dab575eef6cad84e2a2819f
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
@@ -2687,6 +2687,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: a3ed390a19db0459bd6839823a6ac6d9c6db198d
 
-PODFILE CHECKSUM: 8990031e4f8f69054685f3e70dda26a41509eda5
+PODFILE CHECKSUM: 0848a487aedebf420502aa95bb0ee76939495478
 
 COCOAPODS: 1.16.2

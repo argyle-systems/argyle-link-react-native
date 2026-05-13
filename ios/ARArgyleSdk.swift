@@ -40,7 +40,8 @@ class ARArgyleSdk: RCTEventEmitter {
     func start(config: NSDictionary) {
         DispatchQueue.main.sync {
             var nativeConfig = LinkConfig(
-                userToken: config.value(forKey: "userToken") as! String,
+                userToken: config.value(forKey: "userToken") as? String,
+                connectUrl: config.value(forKey: "connectUrl") as? String,
                 sandbox: config.value(forKey: "sandbox") as! Bool
             )
 

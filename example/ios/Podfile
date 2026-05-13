@@ -31,5 +31,14 @@ target 'LinkReactNative' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Patch fmt 11.x for Xcode 26+ stricter consteval enforcement
+    fmt_base_header = File.join(installer.sandbox.root, 'fmt/include/fmt/base.h')
+    if File.exist?(fmt_base_header)
+      FileUtils.chmod(0644, fmt_base_header)
+      content = File.read(fmt_base_header)
+      patched = content.gsub('#  define FMT_USE_CONSTEVAL 1', '#  define FMT_USE_CONSTEVAL 0 // Patched for Xcode 26 compatibility')
+      File.write(fmt_base_header, patched) if patched != content
+    end
   end
 end
