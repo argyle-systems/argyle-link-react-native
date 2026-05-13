@@ -32,7 +32,8 @@ export interface LinkConfig {
      */
     linkKey?: string
     sandbox: boolean
-    userToken: string
+    userToken?: string
+    connectUrl?: string
     flowId?: string
     language?: Language,
     /**
