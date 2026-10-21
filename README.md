@@ -8,7 +8,7 @@ If you are looking to update Argyle Link to the newest version, navigate to [upg
 
 **Requirements for iOS:**
 
-- iOS 14.0+
+- iOS 15.0+
 - Xcode 16.0+
 - Swift 5.5+
 
@@ -45,15 +45,13 @@ configurations.all {
 
 `$ yarn add @argyleio/argyle-plugin-react-native`
 
-Update the Argyle pod with:
+Install the iOS dependencies with:
 
 `$ cd ios`
 
 `$ pod install`
 
-`$ pod update`
-
-in case not the most recent version of Argyle pod was installed.
+The Argyle iOS SDK is no longer pulled from CocoaPods trunk: during `pod install` the plugin downloads the matching `Argyle.xcframework` from the [Argyle iOS SDK releases](https://github.com/argyle-systems/argyle-link-ios/releases), verifies its checksum and links it into your app. Make sure `github.com` is reachable from the machine running `pod install`.
 
 --- 
 

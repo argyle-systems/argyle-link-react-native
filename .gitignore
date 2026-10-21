@@ -44,3 +44,6 @@ buck-out/
 
 # npm
 .npmrc
+
+# Argyle iOS SDK, downloaded by the podspec during pod install
+ios/Frameworks/

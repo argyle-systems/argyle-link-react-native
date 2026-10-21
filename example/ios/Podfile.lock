@@ -1,7 +1,5 @@
 PODS:
-  - Argyle (5.15.2)
-  - argyle-plugin-react-native (5.15.4):
-    - Argyle (= 5.15.2)
+  - argyle-plugin-react-native (0.0.1):
     - React
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
@@ -2455,7 +2453,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Argyle
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -2610,8 +2607,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Argyle: a1b09dea04d4276b3840fb1316874e3fabf1f84a
-  argyle-plugin-react-native: 2653a80cd7fdf2b38dab575eef6cad84e2a2819f
+  argyle-plugin-react-native: b1806105898c3420cb596f435884ef66357669f0
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
