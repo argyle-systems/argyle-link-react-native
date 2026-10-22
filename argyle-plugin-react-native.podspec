@@ -7,8 +7,8 @@ package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 # Argyle iOS SDK release to vendor. The checksum is the `checksum` from Package.swift at the
 # matching tag in argyle-systems/argyle-link-ios (SHA-256 of Argyle.xcframework.zip).
-argyle_sdk_version = "5.15.2"
-argyle_sdk_sha256 = "762a2506e7ee5ffb14685b32a55285cc545159b00ba2a2858942e07d54120740"
+argyle_sdk_version = "5.16.0"
+argyle_sdk_sha256 = "1f2a25df49ae822ef44073e2c119659b6580377d30abaa6286767208874b0b32"
 
 frameworks_dir = File.join(__dir__, "ios", "Frameworks")
 xcframework_path = File.join(frameworks_dir, "Argyle.xcframework")
