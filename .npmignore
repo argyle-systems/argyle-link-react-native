@@ -4,3 +4,4 @@ CODEOWNERS
 .idea/
 .github/
 scripts/
+ios/Frameworks/
