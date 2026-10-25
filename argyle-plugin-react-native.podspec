@@ -12,12 +12,12 @@ Pod::Spec.new do |s|
   s.homepage     = "https://argyle.io"
   s.license      = "Apache 2.0"
   s.authors      = { "Argyle Systems" => "argyle@argyle.io" }
-  s.platforms    = { :ios => "12.0", :tvos => "12.0" }
+  s.platforms    = { :ios => "15.0" }
   s.source       = { :git => "https://github.com/argyle-systems/argyle-plugin-react-native.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,swift}"
+  s.source_files = "ios/*.{h,m,swift}"
   s.requires_arc = true
+  s.frameworks   = "WebKit", "SafariServices"
 
   s.dependency "React"
-  s.dependency 'Argyle', '5.15.2'
 end

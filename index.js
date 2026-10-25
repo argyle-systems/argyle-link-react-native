@@ -46,7 +46,24 @@ export class ArgyleLink {
             })
         })
 
-        ARArgyleSdk.start(config)
+        ARArgyleSdk.start(ArgyleLink.toNativeConfig(config))
+    }
+
+    // Functions can't cross the bridge, so native receives the names of the provided callbacks instead
+    static toNativeConfig(config) {
+        const nativeConfig = {}
+        const providedCallbacks = []
+
+        Object.keys(config).forEach(key => {
+            if (typeof config[key] === 'function') {
+                providedCallbacks.push(key)
+            } else if (config[key] !== undefined && config[key] !== null) {
+                nativeConfig[key] = config[key]
+            }
+        })
+
+        nativeConfig.callbacks = providedCallbacks
+        return nativeConfig
     }
 
     static close() {

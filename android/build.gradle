@@ -28,6 +28,7 @@ android {
     targetSdkVersion safeExtGet('targetSdkVersion')
     versionCode 1
     versionName "1.0"
+    consumerProguardFiles "consumer-rules.pro"
   }
   lintOptions {
     abortOnError false
@@ -48,7 +49,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${safeExtGet('kotlinVersion')}"
     implementation "com.facebook.react:react-native:${safeExtGet('reactnativeVersion')}"
-    implementation 'com.argyle:argyle-link-android:5.15.8'
+    implementation 'androidx.core:core:1.13.1'
 }
 
 def configureReactNativePom(def pom) {

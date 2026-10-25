@@ -1,3 +1,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+        <package android:name="com.walmart.sparkdriver" />
+    </queries>
+
+    <application>
+        <provider
+                android:name="com.reactlibrary.ARArgyleFileProvider"
+                android:authorities="${applicationId}.argyle.rn.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/arargyle_provider_paths"/>
+        </provider>
+
+        <activity
+                android:name="com.reactlibrary.ARArgyleWebLinkActivity"
+                android:theme="@android:style/Theme.Material.Light.NoActionBar"
+                android:windowSoftInputMode="adjustResize"
+                android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode"
+                android:exported="false" />
+    </application>
+
 </manifest>
