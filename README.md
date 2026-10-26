@@ -2,8 +2,6 @@
 
 Argyle Link React Native SDK provides a way to integrate [Argyle Link](https://argyle.com/docs/link/overview) into your React Native app.
 
-Link runs in a webview hosted by the plugin, loading the same web Link experience as the Argyle native iOS and Android SDKs. The plugin has no native SDK dependencies.
-
 - Required react-native version 0.76+
 
 **Requirements for iOS:**
