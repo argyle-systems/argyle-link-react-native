@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
       with:
-        xcode-version: '26.0'
+        xcode-version: latest-stable
 
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -64,7 +64,7 @@ jobs:
     - name: Build App
       run: |
         cd example/ios
-        xcodebuild -workspace LinkReactNative.xcworkspace -scheme LinkReactNative -configuration Release -sdk iphoneos -archivePath demo.xcarchive archive CODE_SIGN_STYLE=Manual
+        xcodebuild -workspace LinkReactNative.xcworkspace -scheme LinkReactNative -configuration Release -destination 'generic/platform=iOS' -archivePath demo.xcarchive archive CODE_SIGN_STYLE=Manual
         xcodebuild -exportArchive -archivePath ./demo.xcarchive -exportOptionsPlist ../../.github/configs/exportOptions.plist -exportPath build-demo
 
     - name: Archive IPA
