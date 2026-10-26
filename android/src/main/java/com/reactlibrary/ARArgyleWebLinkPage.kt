@@ -4,8 +4,6 @@ import com.facebook.react.bridge.ReadableMap
 import org.json.JSONArray
 import org.json.JSONObject
 
-// Builds the HTML page that boots web Link (argyle.web.v5.js) with the config passed from JS.
-// Mirrors WebLinkViewModel / WebCallbacksBridge in the Android SDK.
 internal class ARArgyleWebLinkPage(config: ReadableMap) {
 
     val baseUrl = if (config.optString("apiHost")?.contains("develop") == true)
@@ -96,7 +94,6 @@ internal class ARArgyleWebLinkPage(config: ReadableMap) {
             <html>
             <head>
             <meta charset="utf-8" />
-            <!-- This is needed in order to apply proper scaling on mobile devices -->
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             </head>
             <body>

@@ -49,7 +49,6 @@ export class ArgyleLink {
         ARArgyleSdk.start(ArgyleLink.toNativeConfig(config))
     }
 
-    // Functions can't cross the bridge, so native receives the names of the provided callbacks instead
     static toNativeConfig(config) {
         const nativeConfig = {}
         const providedCallbacks = []

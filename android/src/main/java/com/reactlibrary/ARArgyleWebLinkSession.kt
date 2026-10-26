@@ -2,7 +2,6 @@ package com.reactlibrary
 
 import org.json.JSONObject
 
-// Links the RN module with the activity it launches; only one Link session can run at a time.
 internal class ARArgyleWebLinkSession(
     val page: ARArgyleWebLinkPage,
     val onCallback: (String, JSONObject) -> Unit

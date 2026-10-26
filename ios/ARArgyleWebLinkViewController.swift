@@ -2,7 +2,6 @@ import UIKit
 import WebKit
 import SafariServices
 
-// Hosts web Link in a WKWebView. Mirrors WebLinkViewController in the iOS SDK.
 class ARArgyleWebLinkViewController: UIViewController, WKScriptMessageHandler, WKUIDelegate {
 
     private let config: NSDictionary
@@ -43,7 +42,7 @@ class ARArgyleWebLinkViewController: UIViewController, WKScriptMessageHandler, W
         view.addSubview(webView)
 
         webView.allowsBackForwardNavigationGestures = true
-        webView.scrollView.contentInsetAdjustmentBehavior = .never // needed for CSS env() insets to work
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.uiDelegate = self
 
         #if DEBUG
@@ -60,7 +59,6 @@ class ARArgyleWebLinkViewController: UIViewController, WKScriptMessageHandler, W
 
     func close() {
         webView.evaluateJavaScript("window.argyle ? (window.argyle.close(), true) : false") { [weak self] result, _ in
-            // web Link calls back with action_close_sdk once closed; dismiss directly if it never loaded
             if (result as? Bool) != true {
                 self?.closeSdk()
             }
@@ -107,7 +105,6 @@ class ARArgyleWebLinkViewController: UIViewController, WKScriptMessageHandler, W
     }
 }
 
-// WKUserContentController retains its handlers, which would keep the controller alive after dismissal.
 private class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
     private weak var target: WKScriptMessageHandler?
 

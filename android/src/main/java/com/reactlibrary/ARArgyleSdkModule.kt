@@ -61,7 +61,6 @@ class ARArgyleSdkModule(context: ReactApplicationContext) : ReactContextBaseJava
         // required to comply with NativeEventEmitter interface
     }
 
-    // Keeps the payloads emitted to JS identical to the ones of the previous native SDK based bridge.
     private fun payload(name: String, data: JSONObject): WritableMap {
         val params = Arguments.createMap()
         when (name) {

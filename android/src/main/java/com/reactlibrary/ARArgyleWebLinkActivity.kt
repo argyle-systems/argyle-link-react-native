@@ -25,7 +25,6 @@ import androidx.core.view.WindowInsetsCompat
 import org.json.JSONObject
 import java.io.File
 
-// Hosts web Link in a WebView. Mirrors WebLinkScreen / ArgyleMainActivity in the Android SDK.
 internal class ARArgyleWebLinkActivity : Activity() {
 
     private var webView: WebView? = null
@@ -37,7 +36,6 @@ internal class ARArgyleWebLinkActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         val session = ARArgyleWebLinkSession.current
-        // Link's config lives in memory only, so a restored activity (e.g. after process death) can't resume
         if (savedInstanceState != null || session == null) {
             session?.activity = this
             finish()
@@ -70,7 +68,6 @@ internal class ARArgyleWebLinkActivity : Activity() {
             settings.javaScriptEnabled = true
             settings.allowContentAccess = true
             settings.domStorageEnabled = true
-            // hardware acceleration
             setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
             setBackgroundColor(Color.WHITE)
@@ -132,7 +129,6 @@ internal class ARArgyleWebLinkActivity : Activity() {
     }
 
     fun closeLink() {
-        // web Link calls back with onActionCloseSdk once closed; finish directly if it never loaded
         webView?.evaluateJavascript("window.argyle ? (window.argyle.close(), true) : false") { result ->
             if (result != "true") {
                 finish()
@@ -186,7 +182,6 @@ internal class ARArgyleWebLinkActivity : Activity() {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "*/*"
             fileChooserParams?.acceptTypes?.filter { it.isNotEmpty() }?.takeIf { it.isNotEmpty() }?.let { mimeTypes ->
-                // web link returns .pdf as allowed type, though android needs application/pdf
                 putExtra(
                     Intent.EXTRA_MIME_TYPES,
                     mimeTypes.map { if (it == ".pdf") "application/pdf" else it }.toTypedArray()
@@ -229,7 +224,6 @@ internal class ARArgyleWebLinkActivity : Activity() {
         cameraImageUri = null
     }
 
-    // Launching the camera throws when the host app declares the CAMERA permission without it being granted
     private fun canUseCamera(): Boolean {
         val requestedPermissions = try {
             packageManager.getPackageInfo(packageName, PackageManager.GET_PERMISSIONS).requestedPermissions

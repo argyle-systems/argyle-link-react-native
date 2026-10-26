@@ -75,7 +75,6 @@ class ARArgyleSdk: RCTEventEmitter {
         return controller
     }
 
-    // Keeps the payloads emitted to JS identical to the ones of the previous native SDK based bridge.
     private static func payload(name: String, data: [String: Any]) -> Any {
         let pick = { (keys: [String]) -> [String: Any] in
             Dictionary(uniqueKeysWithValues: keys.map { ($0, data[$0] ?? NSNull()) })

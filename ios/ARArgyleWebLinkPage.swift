@@ -1,7 +1,5 @@
 import Foundation
 
-// Builds the HTML page that boots web Link (argyle.web.v5.js) with the config passed from JS.
-// Mirrors WebLinkViewController / WebLinkInitParamsProvider / WebCallbacksBridge in the iOS SDK.
 enum ARArgyleWebLinkPage {
 
     static let bridgeName = "argyleNativeSdkBridge"
@@ -31,7 +29,6 @@ enum ARArgyleWebLinkPage {
     <html lang="en">
     <head>
     <meta charset="utf-8" />
-    <!-- This is needed in order to apply proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <title>Argyle Link</title>
     </head>
@@ -65,7 +62,6 @@ enum ARArgyleWebLinkPage {
         return "\(tokenUpdateFunc)(\(jsLiteral(token)));"
     }
 
-    // Internal builds point Link at a develop API host; the web Link bundle must come from the same env.
     private static func isDevelop(config: NSDictionary) -> Bool {
         return (config["apiHost"] as? String)?.contains("develop") == true
     }
