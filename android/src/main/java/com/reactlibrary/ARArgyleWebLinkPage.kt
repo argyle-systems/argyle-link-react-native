@@ -6,10 +6,7 @@ import org.json.JSONObject
 
 internal class ARArgyleWebLinkPage(config: ReadableMap) {
 
-    val baseUrl = if (config.optString("apiHost")?.contains("develop") == true)
-        "https://plugin.develop.argyle.io/"
-    else
-        "https://plugin.argyle.io/"
+    val baseUrl = "https://plugin.argyle.io/"
 
     val html: String
 

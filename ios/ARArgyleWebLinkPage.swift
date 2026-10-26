@@ -44,14 +44,10 @@ enum ARArgyleWebLinkPage {
     </html>
     """
 
-    static func baseUrl(config: NSDictionary) -> URL {
-        return isDevelop(config: config)
-            ? URL(string: "https://plugin.develop.argyle.io/")!
-            : URL(string: "https://plugin.argyle.io/")!
-    }
+    static let baseUrl = URL(string: "https://plugin.argyle.io/")!
 
     static func html(config: NSDictionary) -> String {
-        let scriptUrl = baseUrl(config: config).appendingPathComponent("argyle.web.v5.js").absoluteString
+        let scriptUrl = baseUrl.appendingPathComponent("argyle.web.v5.js").absoluteString
         let params = (initParams(config: config) + callbackDefinitions(config: config)).joined(separator: "\n")
         return template
             .replacingOccurrences(of: "// ARGYLE_INIT_PARAMS", with: params)
@@ -60,10 +56,6 @@ enum ARArgyleWebLinkPage {
 
     static func tokenUpdateScript(token: String) -> String {
         return "\(tokenUpdateFunc)(\(jsLiteral(token)));"
-    }
-
-    private static func isDevelop(config: NSDictionary) -> Bool {
-        return (config["apiHost"] as? String)?.contains("develop") == true
     }
 
     private static func initParams(config: NSDictionary) -> [String] {

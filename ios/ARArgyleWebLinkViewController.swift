@@ -53,7 +53,7 @@ class ARArgyleWebLinkViewController: UIViewController, WKScriptMessageHandler, W
 
         webView.loadHTMLString(
             ARArgyleWebLinkPage.html(config: config),
-            baseURL: ARArgyleWebLinkPage.baseUrl(config: config)
+            baseURL: ARArgyleWebLinkPage.baseUrl
         )
     }
 
